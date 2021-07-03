@@ -111,5 +111,7 @@ RUN mkdir -p ~/.config/nvim/lsp/java && \
 	npm install && \
 	npm run build-plugin && \
 	cd ~
-		
-WORKDIR $HOME
+
+ENV PATH="~/dotfiles:$PATH"
+
+RUN cd ~ && git clone https://github.com/KishoreGarpati/dotfiles.git 
