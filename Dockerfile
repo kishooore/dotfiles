@@ -112,6 +112,9 @@ RUN mkdir -p ~/.config/nvim/lsp/java && \
 	npm run build-plugin && \
 	cd ~
 
+# Install angular-cli, angular-language-server
+RUN npm install -g typescript typescript-language-server diagnostic-languageserver eslint_d @angular/cli
+
 ENV PATH="~/dotfiles:$PATH"
 
 RUN cd ~ && git clone https://github.com/KishoreGarpati/dotfiles.git 
