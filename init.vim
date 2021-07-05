@@ -37,11 +37,11 @@ nnoremap <C-l> <C-w>l
 nnoremap Q :q!<CR>
 augroup lsp
    au!
-   au FileType java lua require'jdtls_setup'.setup()
+   au FileType java lua require'lsp.java.jdtls_setup'.setup()
 augroup end
 
 " typescript lsp
-lua require("tsls_setup")
+lua require("lsp.typescript.tsls_setup")
 
 " Telescope
 nnoremap <leader>ff <cmd>Telescope find_files<cr>

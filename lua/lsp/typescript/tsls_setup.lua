@@ -20,6 +20,37 @@ _G.lsp_organize_imports = function()
   vim.lsp.buf.execute_command(params)
 end
 local on_attach = function(client, bufnr)
+
+  require'lsp-status'.register_progress()
+  vim.o.completeopt = "menuone,noselect"
+  require'compe'.setup {
+    enabled = true;
+    autocomplete = true;
+    debug = false;
+    min_length = 1;
+    preselect = 'always';
+    throttle_time = 80;
+    source_timeout = 200;
+    incomplete_delay = 400;
+    max_abbr_width = 100;
+    max_kind_width = 100;
+    max_menu_width = 100;
+    documentation = true;
+    source = {
+      path = true;
+      buffer = true;
+      calc = true;
+      nvim_lsp = true;
+      nvim_lua = true;
+    };
+  }
+  require'lspkind'.init()
+  require'lspsaga'.init_lsp_saga()
+
+  -- Kommentary
+  vim.api.nvim_set_keymap("n", "<leader>/", "<plug>kommentary_line_default", {})
+  vim.api.nvim_set_keymap("v", "<leader>/", "<plug>kommentary_visual_default", {})
+
   local buf_map = vim.api.nvim_buf_set_keymap
   vim.cmd("command! LspDef lua vim.lsp.buf.definition()")
   vim.cmd("command! LspFormatting lua vim.lsp.buf.formatting()")
@@ -35,6 +66,8 @@ local on_attach = function(client, bufnr)
   vim.cmd(
   "command! LspDiagLine lua vim.lsp.diagnostic.show_line_diagnostics()")
   vim.cmd("command! LspSignatureHelp lua vim.lsp.buf.signature_help()")
+
+  buf_map(bufnr, "n", "gi", ":LspImplementation<CR>", {silent = true})
   buf_map(bufnr, "n", "gd", ":LspDef<CR>", {silent = true})
   buf_map(bufnr, "n", "gr", ":LspRename<CR>", {silent = true})
   buf_map(bufnr, "n", "gR", ":LspRefs<CR>", {silent = true})
