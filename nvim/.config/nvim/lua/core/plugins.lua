@@ -8,6 +8,13 @@ require("lazy").setup({
   "christoomey/vim-tmux-navigator",
   "chriskempson/base16-vim",
   {
+    "nvim-treesitter/nvim-treesitter",
+    build = function()
+      local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
+      ts_update()
+    end,
+  },
+  {
     "nvim-telescope/telescope.nvim", tag = "0.1.4",
     dependencies = { "nvim-lua/plenary.nvim" }
   },
