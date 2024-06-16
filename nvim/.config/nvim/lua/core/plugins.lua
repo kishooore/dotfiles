@@ -6,7 +6,7 @@ require("lazy").setup({
   "rafamadriz/friendly-snippets",
   "tpope/vim-fugitive",
   "christoomey/vim-tmux-navigator",
-  "chriskempson/base16-vim",
+  "wincent/base16-nvim",
   {
     "nvim-treesitter/nvim-treesitter",
     build = function()
