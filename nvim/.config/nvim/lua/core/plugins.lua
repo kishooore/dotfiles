@@ -8,6 +8,12 @@ require("lazy").setup({
   "christoomey/vim-tmux-navigator",
   "wincent/base16-nvim",
   {
+    'fei6409/log-highlight.nvim',
+    config = function()
+        require('log-highlight').setup {}
+    end,
+  },
+  {
     "nvim-treesitter/nvim-treesitter",
     build = function()
       local ts_update = require("nvim-treesitter.install").update({ with_sync = true })
