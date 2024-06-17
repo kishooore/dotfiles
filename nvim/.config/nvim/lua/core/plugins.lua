@@ -7,6 +7,7 @@ require("lazy").setup({
   "tpope/vim-fugitive",
   "christoomey/vim-tmux-navigator",
   "wincent/base16-nvim",
+  "David-Kunz/gen.nvim",
   {
     'fei6409/log-highlight.nvim',
     config = function()
