@@ -29,6 +29,7 @@ source $HOME/.config/fish/functions.fish
 
 # Misc
 eval (starship init fish | source)
+eval (zoxide init fish | source)
 fish_vi_key_bindings
 
 # accept auto suggestion
