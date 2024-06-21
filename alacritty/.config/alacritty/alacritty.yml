@@ -4,7 +4,7 @@ shell:
   program: /opt/homebrew/bin/fish
 
 font:
-  size: 14.0
+  size: 16.0
   normal:
     family: "FiraCode Nerd Font"
     size: 12.0
