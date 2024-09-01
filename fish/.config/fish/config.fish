@@ -21,8 +21,9 @@ set -x TFENV_ARCH amd64
 set -x PYENV_VIRTUALENV_DISABLE_PROMPT 1
 
 # Aliases
-alias vim="nvim"
-alias vi="nvim"
+alias vim "nvim"
+alias vi "nvim"
+alias gs "git status"
 
 # Functions
 source $HOME/.config/fish/functions.fish
@@ -31,6 +32,3 @@ source $HOME/.config/fish/functions.fish
 eval (starship init fish | source)
 eval (zoxide init fish | source)
 fish_vi_key_bindings
-
-# accept auto suggestion
-bind \ce accept-autosuggestion
