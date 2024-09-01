@@ -1,8 +1,8 @@
 vim.g.mapleader = ' '
 
 local o  = vim.o
-local wo = vim.wo
-local bo = vim.bo
+--local wo = vim.wo
+--local bo = vim.bo
 
 o.termguicolors     = true
 o.splitright        = true
@@ -14,17 +14,17 @@ o.guicursor         = ''
 o.completeopt	    = 'menu,menuone,noselect'
 o.updatetime	    = 300
 
-bo.expandtab        = true
-bo.autoindent       = true
-bo.cindent          = true
-bo.softtabstop      = 2
-bo.tabstop	    = 2
-bo.shiftwidth	    = 2
+o.expandtab        = true
+o.autoindent       = true
+o.cindent          = true
+o.softtabstop      = 2
+o.tabstop	    = 2
+o.shiftwidth	    = 2
 
 
-wo.signcolumn       = 'yes'
-wo.number           = true
-wo.relativenumber   = true
+o.signcolumn       = 'yes'
+o.number           = true
+o.relativenumber   = true
 
 vim.cmd 'syntax on'
 vim.cmd 'hi Normal ctermbg=none'
